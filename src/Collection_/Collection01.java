@@ -12,6 +12,7 @@ public class Collection01 {
 //        Iterator接口中有俩个常用的方法next() hasNext();remove()共其他类实现
 //        remove专门用于在遍历时删除集合元素,而Collection中的remove每次结构改变都有要遵循集合规定,重新获得迭代器
 //        Collection中常用的方法有如下
+
 /*
         boolean add(E o)    确保此 collection 包含指定的元素（添加操作）。
         boolean addAll(Collection<? extends E> c)    将指定 collection 中的所有元素都添加到此collection 中（可选操作）。
@@ -58,7 +59,7 @@ public class Collection01 {
          Object remove(int index)   指定索引删除数据，并返回该数据
          Object get(int index)    指定索引获得数据
          Object set(int index, Object element)    指定索引替换数据，并返回被替换的数据
-         int indexOf(Object o)     从左到右获得指定第一个数据的下标
+         int indexOf(Object o)     从左到右获得指定第一个数据的下标  利用的equal方法
          int lastIndexOf(Object o)   从右到左获得指定第一个数据的下标
          List<E> subList(int fromIndex, int toIndex)   左闭右开返回一个子链
 
@@ -87,7 +88,7 @@ SortedMap<K,V> subMap(K fromKey, K toKey)
 //调用remove等记得重写equal方法,否则比较的是地址
 /*
 boolean addAll(Collection<? super T> c, T... elements) 当Collection为空时异常,暂时不清楚啥时候返回false
-void sort(List<T> list)
+void sort(List<T> list)  //自定义类自然而言是自定义的类接的Comparable
 void sort(List<T> list, Comparator<? super T> c)
 void shuffle(List<?> 1ist)   打乱顺序:打乱集合顺序。
 int binarySearch(List<? extends T> list, T key)

@@ -69,7 +69,7 @@ LinkedList(Collection<? extends E> c)
     LinkedList：把随机增删发挥到极致。
     加元素都是往末尾添加，所以ArrayList用的比LinkedList多。
 
-    自己独有的常用的方法(push与add一样插到头但是无返回值 addXXX offerXXX都是一样的,没有后缀就是头)
+    自己独有的常用的方法(push与add一样插到头但是无返回值 addXXX offerXXX都是一样的,没有后缀就是前，添加的offer add没前缀是后)
     void push(E e)
     void addFirst(E e)
     void addLast(E e)
@@ -164,11 +164,11 @@ TreeSet集合中元素可排序的二种方式：使用比较器的方式。
     q.compareTo(Customer c)  q是准备插入的值,c是红黑树的节点,q分别于不同c对比,当q==c q>c,q<c
     可以分别返回0,>0,<0表现如下(在sort表现是>就交换)
         返回0表示相同，value会覆盖。
-        返回>0，会继续在右子树上找。【10 - 9 = 1 ，1 > 0的说明左边这个数字比较大。所以在右子树上找。】
+        返回>0，会继续在右子树上找。【10 - 9 = 1 ，1 > 0的说明左边这个数字比较大。所以在右子树上找。】 交换
         返回<0，会继续在左子树上找。
          public int compareTo(Customer c) { return this.time-c.time}
 
-        第二种：在构造TreeSet或者TreeMap集合的时候给它传一个比较器对象,该比较器是实现Comparator<自定义类>中的
+        第二种：在构造TreeSet或者TreeMap集合的时候给它传一个比较器对象,该比较器是实现Comparator<自定义类>中的一个类
         int compare(自定义类 o1, 自定义类 o2),原理如上,可以用匿名内部类
 
 Comparable和Comparator怎么选择呢？
